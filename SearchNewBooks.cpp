@@ -68,14 +68,14 @@ int main(int argc, char* argv[]) {
         cerr << "Incorrect choice" << endl;
     }
 
-    Timer timer;
-    timer.Reset();
-
     size_t found_count = 0;
     // For binary/recursive binary searches, ensure the books are sorted per spec
     if (userInput == "b" || userInput == "r") {
         std::sort(books.begin(), books.end());
     }
+
+    Timer timer;
+    timer.Reset();
 
     while (std::getline(reqFile, line)) {
         Book req;
